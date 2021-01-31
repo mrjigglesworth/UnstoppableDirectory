@@ -22,3 +22,7 @@ comments:
     - comment
   transforms: 
     email: md5
+  reCaptcha:
+    enabled: true
+    siteKey: 6LfKB0QaAAAAAAwS6bNIV85y3LOgGq7zoqzXr7m1
+    secret: 6LfKB0QaAAAAAIZoIGiosExU5yfRtsx0TW3Xa-4O

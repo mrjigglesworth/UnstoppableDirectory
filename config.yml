@@ -22,6 +22,10 @@ menu:
       url: /about/
       weight: 3
 
+reCaptcha:
+    siteKey: 6LfKB0QaAAAAAAwS6bNIV85y3LOgGq7zoqzXr7m1
+    secret: 6LfKB0QaAAAAAIZoIGiosExU5yfRtsx0TW3Xa-4O
+
 params:
   author: ""
   description: ""
@@ -42,7 +46,7 @@ params:
     src: "/img/profile1.png"
     alt: "Unstoppable Directory"
   staticman:
-    endpoint: "https://unstoppabledirectory-bot.herokuapp.com/v2/entry"
+    endpoint: "https://unstoppable-directory-bot.herokuapp.com/v2/entry"
     username: "mrjigglesworth"
     repository: "UnstoppableDirectory"
     branch: "main"
