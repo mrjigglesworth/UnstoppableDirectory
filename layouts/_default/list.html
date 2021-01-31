@@ -1,0 +1,75 @@
+{{ partial "header.html" . }}
+
+<!-- {{ range where .Pages "Type" "post" }}
+  {{ .Title }}
+  {{ .Type }}
+  {{ .Description }}
+{{ end }} -->
+<div class="container">
+<main class="list">
+{{ $paginator := .Paginate (where .Pages "Type" "video") }}
+{{ range $paginator.Pages }}
+<table>
+  <tr>
+    <td width="200">
+      <div  style="text-align: center;">
+        <h3>{{ .Params.title }}</h3>
+      </div>
+    </td>
+    <td>
+      <table style="list-style-type: none; border:none; max-width: 90%;">
+        <tr>
+          <td width=300>
+            <li><a href="{{ .Params.websiteUrl }}">{{ .Params.websiteUrl }}</a></li>
+          </td>
+          <td>
+            <li>{{ .Params.websiteUrlStatus }}</li>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <li><a href="{{ .Params.websiteUrl }}">{{ .Params.TwitterUrl }}</a></li>
+          </td>
+          <td>
+            <li>{{ .Params.TwitterUrlStatus }}</li>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <li><a href="{{ .Params.instagramUrl }}">{{ .Params.instagramUrl }}</a></li>
+          </td>
+          <td>
+            <li>{{ .Params.instagramUrlStatus }}</li>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <li><a href="{{ .Params.facebookUrl }}">{{ .Params.facebookUrl }}</a></li>
+          </td>
+          <td>
+            <li>{{ .Params.facebookUrlStatus }}</li>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <li><a href="{{ .Params.youtubeUrl }}">{{ .Params.youtubeUrl }}</a></li>
+          </td>
+          <td>
+            <li>{{ .Params.youtubeUrlStatus }}</li>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+{{ end }}
+</main>
+    <nav style="text-align: center; padding: 5px;">
+      <div style="text-align: center;" class="article-list">
+        {{ template "_internal/pagination.html" . }}
+        {{ partial "comments.html" . }}
+      </div>
+    </nav>
+</div>
+
+{{ partial "footer.html" . }}

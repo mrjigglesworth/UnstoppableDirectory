@@ -1,0 +1,48 @@
+baseurl: "/"
+languageCode: "en-us"
+title: "Pro America"
+theme: "xmag"
+ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
+preserveTaxonomyNames: true
+hasCJKLanguage: true
+paginate: 2
+
+permalinks:
+  post: "/post/:year/:month/:day/:slug/"
+
+menu:
+  main:
+    - name: Directory
+      url: /
+      weight: 1
+    - name: Submission
+      url: /submission/
+      weight: 2
+    - name: About
+      url: /about/
+      weight: 3
+
+params:
+  author: ""
+  description: ""
+  avatar: ""
+  headerTitle : "Unstoppable Directory"
+  motto: "The idea of this site is to provide a censorship resistant directory where creators can link their sites. This website is built on IPFS (InterPlanetary File System), a distributed network that is censorship resistent."
+  categoriesLimitInHeader: 6
+  favicon: "/img/favicon.ico"
+  description: ""
+  footer: ""
+  github_edit: ""
+  summary_length: 300
+  text:
+    back: "&larr; Back to Home"
+    edit: "Edit this page &rarr;"
+    truncated: "&hellip;"
+  banner:
+    src: "/img/profile1.png"
+    alt: "Unstoppable Directory"
+  staticman:
+    endpoint: "https://unstoppabledirectory-bot.herokuapp.com/v2/entry"
+    username: "mrjigglesworth"
+    repository: "UnstoppableDirectory"
+    branch: "main"

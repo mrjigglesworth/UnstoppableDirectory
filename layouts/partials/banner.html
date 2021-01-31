@@ -1,0 +1,12 @@
+<div class="banner">
+<a href="{{ relURL .Site.BaseURL }}"{{ if not .Site.Params.banner }} class="text"{{ end }}>
+{{ with .Site.Params.banner }}
+<img src="{{ relURL .src }}" alt="{{ .alt }}" style="max-height: 80px;"/>
+{{ else }}{{ (replaceRE "(&[A-Z]) (fr;)" "$1$2" (replaceRE "([A-Z])" "&$1 fr;" (upper .Site.Title))) | safeHTML }}
+{{ end }}</a>
+<ul class="menu" id="menuHeader">
+    {{ range .Site.Menus.main }}
+    <li><a href="{{ .URL | relURL }}"><span data-hover="{{ .Name }}">{{ .Name }}</span></a></li>
+    {{ end }}
+  </ul>
+</div>

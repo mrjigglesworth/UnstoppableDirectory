@@ -1,0 +1,67 @@
+{{ partial "header.html" . }}
+
+<div class="container" style="min-width: 100%;">
+<main class="list" style="padding-top: 20px; padding-bottom: 20px;">
+<!-- {{ $pages := .Pages }}
+{{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }} -->
+{{ $paginator := .Paginate (where $pages "Section" "!=" "") }}
+{{ range $paginator.Pages }}
+        <table>
+            <tr>
+              <td width="200">
+                <div  style="text-align: center;">
+                  <h3>{{ .Params.title }}</h3>
+                </div>
+              </td>
+              <td>
+                <table style="list-style-type: none; border:none; max-width: 90%;">
+                  <tr>
+                    <td width=300>
+                      <li><a href="{{ .Params.websiteUrl }}">{{ .Params.websiteUrl }}</a></li>
+                    </td>
+                    <td>
+                      <li>{{ .Params.websiteUrlStatus }}</li>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li>{{ .Params.TwitterUrl }}</li>
+                    </td>
+                    <td>
+                      <li>{{ .Params.TwitterUrlStatus }}</li>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li><a href="{{ .Params.instagramUrl }}">{{ .Params.instagramUrl }}</a></li>
+                    </td>
+                    <td>
+                      <li>{{ .Params.instagramUrlStatus }}</li>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li><a href="{{ .Params.facebookUrl }}">{{ .Params.facebookUrl }}</a></li>
+                    </td>
+                    <td>
+                      <li>{{ .Params.facebookUrlStatus }}</li>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li><a href="{{ .Params.youtubeUrl }}">{{ .Params.youtubeUrl }}</a></li>
+                    </td>
+                    <td>
+                      <li>{{ .Params.youtubeUrlStatus }}</li>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+{{ end }}
+</main>
+<nav>{{ template "_internal/pagination.html" . }}</nav>
+</div>
+
+{{ partial "footer.html" . }}
