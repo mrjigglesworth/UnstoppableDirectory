@@ -1,6 +1,6 @@
 baseurl: "/"
 languageCode: "en-us"
-title: "Pro America"
+title: "Unstoppable Directory"
 theme: "xmag"
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 preserveTaxonomyNames: true
