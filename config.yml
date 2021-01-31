@@ -15,9 +15,6 @@ menu:
     - name: Directory
       url: /
       weight: 1
-    - name: Submission
-      url: /submission/
-      weight: 2
     - name: About
       url: /about/
       weight: 3
