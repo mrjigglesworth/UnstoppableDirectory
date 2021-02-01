@@ -1,3 +1,3 @@
-[submodule "themes/xmag"]
-	path = themes/xmag
+[submodule "themes/xmagtheme"]
+	path = themes/xmagtheme
 	url = https://github.com/yihui/hugo-xmag.git

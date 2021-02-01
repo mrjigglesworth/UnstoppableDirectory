@@ -1,7 +1,7 @@
 baseurl: "/"
 languageCode: "en-us"
 title: "Unstoppable Directory"
-theme: "xmag"
+theme: "xmagtheme"
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 preserveTaxonomyNames: true
 hasCJKLanguage: true
