@@ -31,15 +31,21 @@
                 <input type="text" name="fields[twitterURL]" class="post-comment-field" placeholder="Twitter URL" />
             </li>
             <li>
-                <input type="submit" class="post-comment-field btn btn-primary comment-buttons" value="Submit">
+                <input type="submit" class="post-comment-field btn btn-primary comment-buttons" value="Submit" onclick="myFunction()">
             </li>
         </ul>
     </form>
-    <div id="comment-submitted" class="dialog" style="display: none;">
+    <div id="creator-submitted" class="dialog" style="display: none;">
         <h3>Thank you!</h3>
         <p>Your request has been submitted and will be published once it has been processed, hashed, and deployed to the IPFS network. &#128522;</p>
 
-        <p><a href="#" class="btn btn-primary comment-buttons ok">OK</a></p>
+        <p><button class="btn btn-primary comment-buttons ok" onClick="window.location.reload();">OK</button></p>
     </div>
 </section>
 {{ end }}
+
+<script>
+    function myFunction() {
+      document.getElementById("creator-submitted").style.display = "block";
+    }
+</script>
