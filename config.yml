@@ -37,7 +37,7 @@ params:
     edit: "Edit this page &rarr;"
     truncated: "&hellip;"
   banner:
-    src: "/img/profile1.png"
+    src: "/img/cover.png"
     alt: "Unstoppable Directory"
   staticman:
     endpoint: "https://unstoppable-directory-bot.herokuapp.com/v2/entry"
