@@ -5,63 +5,56 @@
   {{ .Type }}
   {{ .Description }}
 {{ end }} -->
+
+
+
+
+
 <div class="container" style="margin-top: 10px;">
 <main class="list">
+
+{{ range .Site.Data.creators }}
+  <table>
+    <tr>
+      <td width="200">
+        <div  style="text-align: center;">
+          <h3>{{ .name }}</h3>
+        </div>
+      </td>
+      <td>
+        <table style="list-style-type: none; border:none; max-width: 90%;">
+          <tr>
+            <td width=350>
+              <li><a href="{{ .websiteUrl }}">{{ .websiteURL }}</a></li>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <li><a href="{{ .twitterURL }}">{{ .twitterURL }}</a></li>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <li><a href="{{ .instagramURL }}">{{ .instagramURL }}</a></li>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <li><a href="{{ .facebookURL }}">{{ .facebookURL }}</a></li>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <li><a href="{{ .youtubeURL }}">{{ .youtubeURL }}</a></li>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+{{ end }}
 {{ $paginator := .Paginate (where .Pages "Type" "video") }}
 {{ range $paginator.Pages }}
-<table>
-  <tr>
-    <td width="200">
-      <div  style="text-align: center;">
-        <h3>{{ .Params.title }}</h3>
-      </div>
-    </td>
-    <td>
-      <table style="list-style-type: none; border:none; max-width: 90%;">
-        <tr>
-          <td width=350>
-            <li><a href="{{ .Params.websiteUrl }}">{{ .Params.websiteUrl }}</a></li>
-          </td>
-          <td style="text-align: center;">
-            <li><strong>{{ .Params.websiteUrlStatus }}</strong></li>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <li><a href="{{ .Params.websiteUrl }}">{{ .Params.TwitterUrl }}</a></li>
-          </td>
-          <td style="text-align: center;">
-            <li><strong>{{ .Params.TwitterUrlStatus }}</strong></li>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <li><a href="{{ .Params.instagramUrl }}">{{ .Params.instagramUrl }}</a></li>
-          </td>
-          <td style="text-align: center;">
-            <li><strong>{{ .Params.instagramUrlStatus }}</strong></li>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <li><a href="{{ .Params.facebookUrl }}">{{ .Params.facebookUrl }}</a></li>
-          </td>
-          <td style="text-align: center;">
-            <li><strong>{{ .Params.facebookUrlStatus }}</strong></li>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <li><a href="{{ .Params.youtubeUrl }}">{{ .Params.youtubeUrl }}</a></li>
-          </td>
-          <td style="text-align: center;">
-            <li><strong>{{ .Params.youtubeUrlStatus }}</strong></li>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
 {{ end }}
 </main>
     <nav style="text-align: center; padding: 5px;">

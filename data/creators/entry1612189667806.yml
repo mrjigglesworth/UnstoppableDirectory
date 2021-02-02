@@ -1,10 +1,10 @@
 _id: a807f600-6499-11eb-a0fc-a743dd4a37cf
 name: Johnny McMuffin
 description: Creator extraordinare
-instagramURL: ''
-websiteURL: ''
-linkedinURL: ''
-facebookURL: ''
-youtubeURL: youtube test
+instagramURL: https://www.instagram.com/
+websiteURL: https://.websiteurl.com
+linkedinURL: https://www.linkedin.com/
+facebookURL: https://www.facebook.com
+youtubeURL: https://www.youtube.com
 twitterURL: ''
 date: 1612189667

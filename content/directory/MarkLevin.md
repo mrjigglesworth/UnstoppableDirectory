@@ -21,5 +21,4 @@ instagramUrlStatus="ACTIVE"
 instagramUrlLastChecked="01/01/2001"
 linkedinUrlStatus=""
 linkedinUrlLastChecked=""
-"listOfStuff"= [{"test" = "test","anothertest"="anothertest"}]
 +++
