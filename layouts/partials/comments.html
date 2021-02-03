@@ -7,7 +7,7 @@
             <li>
                 <input type="hidden" name="options[redirect]" value="{{ .Permalink }}#comment-submitted">
                 <input type="hidden" name="options[slug]" value="{{ .File.BaseFileName }}">
-                <input type="text" name="fields[name]" class="post-comment-field" placeholder="Name *" required/>
+                <input id="name" type="text" name="fields[name]" class="post-comment-field" placeholder="Name *" required/>
             </li>
             <li>
                 <input type="text" name="fields[description]" class="post-comment-field" placeholder="Description" />
@@ -31,7 +31,19 @@
                 <input type="text" name="fields[twitterURL]" class="post-comment-field" placeholder="Twitter URL" />
             </li>
             <li>
-                <input type="submit" class="post-comment-field btn btn-primary comment-buttons" value="Submit" onclick="myFunction()">
+                <input type="text" name="fields[flickrURL]" class="post-comment-field" placeholder="Flickr URL" />
+            </li>
+            <li>
+                <input type="text" name="fields[gabURL]" class="post-comment-field" placeholder="Gab URL" />
+            </li>
+            <li>
+                <input type="text" name="fields[odyseeURL]" class="post-comment-field" placeholder="Odysee URL" />
+            </li>
+            <li>
+                <input type="text" name="fields[tiktokURL]" class="post-comment-field" placeholder="TikTok URL" />
+            </li>
+            <li>
+                <input disabled type="submit" class="post-comment-field btn btn-primary comment-buttons" value="Submit" id="btnSubmitSources" onclick="myFunction()">
             </li>
         </ul>
     </form>
@@ -48,4 +60,14 @@
     function myFunction() {
       document.getElementById("creator-submitted").style.display = "block";
     }
+</script>
+<script>
+  document.getElementById("name").addEventListener("keyup", function() {
+      var nameInput = document.getElementById('name').value;
+      if (nameInput != "") {
+          document.getElementById('btnSubmitSources').removeAttribute("disabled");
+      } else {
+          document.getElementById('btnSubmitSources').setAttribute("disabled", null);
+      }
+  });
 </script>
