@@ -2,7 +2,7 @@
 
 <div class="container" style="margin-top: 10px;">
 <main class="list">
-
+  
 {{ range .Site.Data.creators }}
   <table class="table" style="background: white; padding: 0px; margin: 0px;">
     <tr>
@@ -69,6 +69,13 @@
               </td>
             </tr>
           {{end}}
+          {{ if .bitchuteURL }}
+            <tr>
+              <td>
+                <li><a href="{{ .bitchuteURL }}">{{ .bitchuteURL }}</a></li>
+              </td>
+            </tr>
+          {{end}}
           {{ if .otherURL }}
             <tr>
               <td>
@@ -78,9 +85,6 @@
           {{end}}
         </table>
       </td>
-      <!-- <td>
-        Preview
-      </td> -->
     </tr>
   </table>
 {{ end }}

@@ -1,9 +1,10 @@
 {{ if and .Site.Params.staticman (not (or .Site.Params.disable_comments .Params.disable_comments)) }}
 <section id="comments" style="background: white; max-width: 60%;">
+    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#ModalLoginForm">
         Add Your Sources
     </button>
-    <div id="ModalLoginForm" class="modal fade">
+    <div id="ModalLoginForm" class="modal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -89,11 +90,11 @@
 </section>
 {{ end }}
 
-<!-- <script>
+<script>
     function myFunction() {
-      document.getElementById("creator-submitted").style.display = "block";
+      document.getElementById("ModalLoginForm").style.display = "none";
     }
-</script> -->
+</script>
 <script>
   document.getElementById("name").addEventListener("keyup", function() {
       var nameInput = document.getElementById('name').value;
