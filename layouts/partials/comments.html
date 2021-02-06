@@ -1,66 +1,94 @@
 {{ if and .Site.Params.staticman (not (or .Site.Params.disable_comments .Params.disable_comments)) }}
-<section id="comments" style="background: white;">
-    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
-    <form target="dummyframe" id="comment-form" class="post-new-comment" method="post" action="{{ .Site.Params.staticman.endpoint }}/{{ .Site.Params.staticman.username }}/{{ .Site.Params.staticman.repository }}/{{ .Site.Params.staticman.branch }}/comments">
-        <h3 class="prompt">Add your content sources</h3>
-        <ul style="list-style-type: none;">
-            <li>
-                <input type="hidden" name="options[redirect]" value="{{ .Permalink }}#comment-submitted">
-                <input type="hidden" name="options[slug]" value="{{ .File.BaseFileName }}">
-                <input id="name" type="text" name="fields[name]" class="post-comment-field" placeholder="Name *" required/>
-            </li>
-            <li>
-                <input type="text" name="fields[description]" class="post-comment-field" placeholder="Description" />
-            </li>
-            <li>
-                <input type="text" name="fields[instagramURL]" class="post-comment-field" placeholder="Instagram URL" />
-            </li>
-            <li>
-                <input type="text" name="fields[websiteURL]" class="post-comment-field" placeholder="Website URL" />
-            </li>
-            <li>
-                <input type="text" name="fields[linkedinURL]" class="post-comment-field" placeholder="Linkedin URL" />
-            </li>
-            <li>
-                <input type="text" name="fields[facebookURL]" class="post-comment-field" placeholder="Facebook URL" />
-            </li>
-            <li>
-                <input type="text" name="fields[youtubeURL]" class="post-comment-field" placeholder="YouTube URL" />
-            </li>
-            <li>
-                <input type="text" name="fields[twitterURL]" class="post-comment-field" placeholder="Twitter URL" />
-            </li>
-            <li>
-                <input type="text" name="fields[flickrURL]" class="post-comment-field" placeholder="Flickr URL" />
-            </li>
-            <li>
-                <input type="text" name="fields[gabURL]" class="post-comment-field" placeholder="Gab URL" />
-            </li>
-            <li>
-                <input type="text" name="fields[odyseeURL]" class="post-comment-field" placeholder="Odysee URL" />
-            </li>
-            <li>
-                <input type="text" name="fields[tiktokURL]" class="post-comment-field" placeholder="TikTok URL" />
-            </li>
-            <li>
-                <input disabled type="submit" class="post-comment-field btn btn-primary comment-buttons" value="Submit" id="btnSubmitSources" onclick="myFunction()">
-            </li>
-        </ul>
-    </form>
-    <div id="creator-submitted" class="dialog" style="display: none;">
-        <h3>Thank you!</h3>
-        <p>Your request has been submitted and will be published once it has been processed, hashed, and deployed to the IPFS network. &#128522;</p>
-
-        <p><button class="btn btn-primary comment-buttons ok" onClick="window.location.reload();">OK</button></p>
+<section id="comments" style="background: white; max-width: 60%;">
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#ModalLoginForm">
+        Add Your Sources
+    </button>
+    <div id="ModalLoginForm" class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form role="form" target="dummyframe" id="comment-form" class="post-new-comment form-group" method="post" action="{{ .Site.Params.staticman.endpoint }}/{{ .Site.Params.staticman.username }}/{{ .Site.Params.staticman.repository }}/{{ .Site.Params.staticman.branch }}/comments">
+                        <input type="hidden" name="_token" value="">
+                        <div class="form-group">
+                            <div>
+                                <!-- <input type="hidden" name="options[redirect]" value="{{ .Permalink }}#comment-submitted">
+                                <input type="hidden" name="options[slug]" value="{{ .File.BaseFileName }}"> -->
+                                <input type="text" name="fields[name]" class="post-comment-field form-control input-lg" id="name" placeholder="Name *" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input type="text" name="fields[description]" class="post-comment-field form-control" placeholder="Description" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input type="url" name="fields[instagramURL]" class="post-comment-field form-control" placeholder="Instagram URL" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input type="url" name="fields[websiteURL]" class="post-comment-field form-control" placeholder="Website URL" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input type="url" name="fields[linkedinURL]" class="post-comment-field form-control" placeholder="LinkedIn URL" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input type="url" name="fields[facebookURL]" class="post-comment-field form-control" placeholder="Facebook URL" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input type="url" name="fields[youtubeURL]" class="post-comment-field form-control" placeholder="YouTube URL" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input type="url" name="fields[twitterURL]" class="post-comment-field form-control" placeholder="Twitter URL" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input type="url" name="fields[flickrURL]" class="post-comment-field form-control" placeholder="Flickr URL" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input type="url" name="fields[gabURL]" class="post-comment-field form-control" placeholder="Gab URL" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input type="url" name="fields[odyseeURL]" class="post-comment-field form-control" placeholder="Odysee URL" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input type="url" name="fields[tiktokURL]" class="post-comment-field form-control" placeholder="TikTok URL" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input disabled type="submit" class="post-comment-field btn btn-primary comment-buttons" value="Submit" id="btnSubmitSources" onclick="myFunction()">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 {{ end }}
 
-<script>
+<!-- <script>
     function myFunction() {
       document.getElementById("creator-submitted").style.display = "block";
     }
-</script>
+</script> -->
 <script>
   document.getElementById("name").addEventListener("keyup", function() {
       var nameInput = document.getElementById('name').value;
